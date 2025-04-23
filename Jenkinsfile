@@ -37,7 +37,7 @@ pipeline{
                 sh '''
                     docker ps -q --filter ancestor=notes-app:latest | xargs -r docker rm -f
                     docker ps -q --filter "publish=8000" | xargs -r docker rm -f
-                    docker run -d -p 8000:8000 notes-app:latest
+                    docker run -d -p 8000:8000 notes-app:latest 
                 '''
                 // sh "docker compose down && docker compose up -d"
             }
